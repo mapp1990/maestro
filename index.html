@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Maestro Bursátil</title>
+
+        <link rel="shortcut icon" href="../img/favicon.png" />
+
+        <meta name=description content="">
+
+        <!-- CSS -->
+        <link href="css/preload.css" rel="stylesheet" media="screen">
+        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+        <link href="css/animate.min.css" rel="stylesheet" media="screen">
+        <link href="css/slidebars.css" rel="stylesheet" media="screen">
+        <link href="css/lightbox.css" rel="stylesheet" media="screen">
+        <link href="css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="css/syntaxhighlighter/shCore.css" rel="stylesheet"  media="screen">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css">        
+        <link href="css/style-blue2.css" rel="stylesheet" media="screen" title="default">        
+        <link href="css/width-full.css" rel="stylesheet" media="screen" title="default">
+        <link href="css/buttons.css" rel="stylesheet" media="screen">        
+        <link href="css/templates.css" rel="stylesheet" media="screen">
+        
+        <script src="js/app.js"></script>
+        <script src="js/index.js"></script>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/slidebars.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/holder.js"></script>
+        <script src="js/buttons.js"></script>
+        <script src="js/styleswitcher.js"></script>
+        <script src="js/circles.min.js"></script>
+
+         <!-- Scripts >
+        <script src="js/holder.js"></script>
+        <script src="js/buttons.js"></script>
+        <script src="js/styleswitcher.js"></script>
+        <script src="js/circles.min.js"></script>
+        
+        <! Syntaxhighlighter >
+        <script src="js/syntaxhighlighter/shCore.js"></script>
+        <script src="js/syntaxhighlighter/shBrushXml.js"></script>
+        <script src="js/syntaxhighlighter/shBrushJScript.js"></script>
+        
+        <script src="js/app.js"></script>
+        <script src="js/index.js"></script>
+        
+        <script src="js/jquery.lwtCountdown-1.0.js"></script>
+        <script src="js/misc.js"></script>
+        <script src="js/template.js"></script>
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.min.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+       <header style="height:100%;" id="header-full-home" class="header-full">
+
+            <div id="content" class="wrap-primary">
+
+                <div class="login-form-full">
+                    <div class="fix-box">
+                        <img src="img/logoMaestro.png" alt="" class="aligncenter animated bounceIn animation-delay-5">
+                        <h6 class="head-title animated bounceInDown animation-delay-8"><br></h6>
+                        <div class="animated fadeInUp animation-delay-8">
+                        <div id="msj_login"></div>
+                        
+                            <form role="form" action="" target="msj_cambio" method="post" enctype="multipart/form-data">
+                            <br><br>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input id="user" type="text" class="form-control" placeholder="Usuario">
+                                </div><br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                    <input id="pass" type="text" class="form-control" placeholder="Contraseña">
+                                </div>
+                            <br><br>
+                                <div class="form-group">
+                                    <a href="javascript:insert_master();" class="btn btn-info btn-ar btn-lg aligncenter"><i class="fa fa-sign-in"></i></a>
+                                    <br>
+                                    <p style="margin: 10px 25% 10px;">Si aún no tiene una cuenta <a href="form_register.html" data-transition="slide"><spam style="color: #00838A">regístrese</spam></a></p>
+                                </div>
+                            
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+
+            </div>
+
+            <script type="text/javascript" src="js/cordova.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+            <script type="text/javascript">app.initialize();</script>
+
+        </header>
+
+        <style type='text/css'>
+            html,body{ margin:0px; height:100%; padding: 0px; }
+        </style>
+    
+    </body>    
+</html>
