@@ -80,7 +80,7 @@ function insert_master(){
         
         valores = 'user='+document.getElementById('user').value+'&pass='+document.getElementById('pass').value;
         
-        /*var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_blank', 'location=no', 'toolbar=no', 'scrollbars=no', 'menubar=no', 'status=no', 'directories=no');
+        var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_blank', 'location=no', 'toolbar=no', 'scrollbars=no', 'menubar=no', 'status=no', 'directories=no');
         ref.addEventListener('loadstart', function(event) { console.log(event.type + ' - ' + event.url); } );
         ref.addEventListener('loadstop', function(event) { console.log(event.type + ' - ' + event.url); } );
         ref.addEventListener('exit', function(event) { console.log(event.type); } );
@@ -103,7 +103,7 @@ function insert_master(){
             success: jQuery('#content').html(frame)
         });*/
 
-        jQuery.ajax({
+       /* jQuery.ajax({
             url:'http://www.maestrobursatil.com/star_sesion_app.php',
             type:'POST',
             data:valores,
@@ -112,9 +112,9 @@ function insert_master(){
                 jQuery("#content").html(data);
                /* for(var i in data){
                     jQuery("#content").append("<li>"+data[i]+"</li>");
-                }*/
+                }
             }
-        });
+        });*/
     }
 }
 
