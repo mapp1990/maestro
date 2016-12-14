@@ -1,8 +1,10 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.materb" version="3.4.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.materb" version="1.0.0">
   <name>Maestro Bursatil</name>
   <description>Aplicación numero 1 para el estudio del mercado de valores.</description>
   <author href="http://webhostcolombia.com" email="miguelapp.1990@gmail.com">Miguel Perilla</author>
   <content src="index.html"/>
+
+  <preference name="phonegap-version" value="3.4.0" />
 
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="default"/>
