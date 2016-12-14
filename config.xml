@@ -38,11 +38,6 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <gap:plugin name="InAppBrowser" value="CDVInAppBrowser" />
-
-  <feature name="InAppBrowser" gap:platform="ios">
-    <param name="ios-package" value="CDVInAppBrowser" />
-</feature>
 
   <icon src="icon.png"/>
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
