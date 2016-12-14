@@ -80,7 +80,7 @@ function insert_master(){
         
         valores = 'user='+document.getElementById('user').value+'&pass='+document.getElementById('pass').value;
         
-        var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, 'location=no', 'toolbar=no', 'scrollbars=no', 'menubar=no', 'status=no', 'directories=no');
+        var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_blank', 'location=no', 'toolbar=no', 'scrollbars=no', 'menubar=no', 'status=no', 'directories=no');
         ref.addEventListener('loadstart', function(event) { console.log(event.type + ' - ' + event.url); } );
         ref.addEventListener('loadstop', function(event) { console.log(event.type + ' - ' + event.url); } );
         ref.addEventListener('exit', function(event) { console.log(event.type); } );
