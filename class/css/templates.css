@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400italic,400,600|Muli:300);
+
+/*---* Estilos Relog Simulador *---*/
+
+#countdown_dashboard {
+	height: 55px;
+	float:right;
+	margin-right: 18px;
+}
+
+.dash {
+	width: 55px;
+	height: 60px;
+	background: transparent url('../img/dash.png') 0 0 no-repeat;
+	float: left;
+	margin-left: 20px;
+	position: relative;
+}
+
+.dash .digit {
+	font-size: 20px;
+	float: left;
+	width: 25px;
+	text-align: center;
+	color: #555;
+	position: relative;
+}
+
+.dash_title {
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	right: 6px;
+	font-size: 9pt;
+	color: #555;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+
+/*---* *-* *---*/
