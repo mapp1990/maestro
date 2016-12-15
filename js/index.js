@@ -79,9 +79,9 @@ function insert_master(){
     }else{
         
         valores = 'user='+document.getElementById('user').value+'&pass='+document.getElementById('pass').value;
-        
-        navigator.vibrate(3000);
-        cordova.InAppBrowser.open('http://www.maestrobursatil.com/star_sesion_app.php', '_blank', 'location=yes');
+
+        navigator.vibrate(100);
+        var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
 
 /*        var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_self', 'location=no');
        
