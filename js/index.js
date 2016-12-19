@@ -202,3 +202,8 @@ function new_register(){
         });        
     }
 }
+
+function carg_home(){alert('Welcome Home');}
+function carg_gui(){alert('Welcome Guias');}
+function carg_tuto(){alert('Welcome Tutorial');}
+function carg_exa(){alert('Welcome Simulador');}
