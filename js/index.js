@@ -78,41 +78,9 @@ function insert_master(){
 
     }else{
         
-        valores = 'user='+document.getElementById('user').value+'&pass='+document.getElementById('pass').value;
+        valores = 'user=' + document.getElementById('user').value + '&pass='+document.getElementById('pass').value;
 
-        navigator.vibrate(100);
-
-        //var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_self', 'location=yes');
-        //ref.addEventListener('loadstart', function(event) { alert(event.url); });
-
-       /* document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-            window.open = cordova.InAppBrowser.open;
-        }
-
-/*        var ref = window.open('http://www.maestrobursatil.com/star_sesion_app.php?'+valores, '_self', 'location=no');
-       
-        ref.addEventListener('loadstart', function(event) { console.log(event.type + ' - ' + event.url); } );
-        ref.addEventListener('loadstop', function(event) { console.log(event.type + ' - ' + event.url); } );
-        ref.addEventListener('exit', function(event) { console.log(event.type); } );
-
-        /*jQuery.ajax({
-            url:"http://www.maestrobursatil.com/star_sesion_app.php" ,
-            type: "GET" ,
-            dataType :  "html" ,
-            data: valores,
-            success: function ( data ){
-                jQuery("#content").html(data);
-            }
-        });*/
-
-        /*var frame = ' <iframe src="http://www.google.com/" width="100%" height="500px"></iframe>';
-
-        jQuery.ajax({
-            type: 'POST',
-            dataType :  'html',
-            success: jQuery('#content').html(frame)
-        });*/
+        document.getElementById("theme-options").style.visibility = "visible";
 
         jQuery.ajax({
             url:'http://www.maestrobursatil.com/star_sesion_app.php',
@@ -121,9 +89,9 @@ function insert_master(){
             dataType:'html',
             success:function(data){
                 jQuery("#content").html(data);
-               /* for(var i in data){
-                    jQuery("#content").append("<li>"+data[i]+"</li>");
-                }*/
+                navigator.vibrate(100);
+                document.getElementById('usr').value = document.getElementById('user').value;
+                document.getElementById('pws').value = document.getElementById('pass').value;
             }
         });
     }
@@ -195,13 +163,30 @@ function new_register(){
             dataType:'html',
             success:function(data){
                 jQuery("#msj_register").html(data);
-               /* for(var i in data){
-                    jQuery("#content").append("<li>"+data[i]+"</li>");
-                }*/
             }
         });        
     }
 }
+
+function profile(){
+    //alert('Welcome Profile');
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&pws=' + document.getElementById('pws').value;
+    
+    jQuery.ajax({
+            url:'http://www.maestrobursatil.com/data_profile.php',
+            type:'POST',
+            data:valores,
+            dataType:'html',
+            success:function(data){
+                jQuery("#content").html(data);
+                navigator.vibrate(100);
+            }
+        });
+}
+function shop(){alert('Welcome Shop');}
+function demo(){alert('Welcome Demo');}
+function close(){alert('Welcome Close');}
 
 function carg_home(){alert('Welcome Home');}
 function carg_gui(){alert('Welcome Guias');}
