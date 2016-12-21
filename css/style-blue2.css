@@ -337,7 +337,15 @@ background-repeat:repeat;padding-bottom:30px}@media (min-height:800px){.login-fo
 }
 
 .foot_logos{
-	Width:90%; 
-	margin-top:3%; 
-	margin-left:5%;
+	position: absolute;
+	width:90%; 
+    margin-left: 5%;
+    top: 90%;
+    left: 0;
+}
+
+.image_profile{
+	margin-top: 30px;
+    width: 150px;
+    border-radius: 60%;
 }

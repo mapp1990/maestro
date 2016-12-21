@@ -81,6 +81,8 @@ function insert_master(){
         valores = 'user=' + document.getElementById('user').value + '&pass='+document.getElementById('pass').value;
 
         document.getElementById("theme-options").style.visibility = "visible";
+        document.getElementById('usr').value = document.getElementById('user').value;
+        document.getElementById('psw').value = document.getElementById('pass').value;
 
         jQuery.ajax({
             url:'http://www.maestrobursatil.com/star_sesion_app.php',
@@ -90,8 +92,6 @@ function insert_master(){
             success:function(data){
                 jQuery("#content").html(data);
                 navigator.vibrate(100);
-                document.getElementById('usr').value = document.getElementById('user').value;
-                document.getElementById('pws').value = document.getElementById('pass').value;
             }
         });
     }
@@ -171,7 +171,7 @@ function new_register(){
 function profile(){
     //alert('Welcome Profile');
 
-    var valores = 'usr=' + document.getElementById('usr').value + '&pws=' + document.getElementById('pws').value;
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
     
     jQuery.ajax({
             url:'http://www.maestrobursatil.com/data_profile.php',
@@ -184,6 +184,8 @@ function profile(){
             }
         });
 }
+
+function cam_profile(){console.log(navigator.camera);}
 function shop(){alert('Welcome Shop');}
 function demo(){alert('Welcome Demo');}
 function close(){alert('Welcome Close');}
