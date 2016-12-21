@@ -185,7 +185,10 @@ function profile(){
         });
 }
 
-function cam_profile(){console.log(navigator.camera);}
+function cam_profile(){
+    navigator.camera;
+}
+
 function shop(){alert('Welcome Shop');}
 function demo(){alert('Welcome Demo');}
 function close(){alert('Welcome Close');}
