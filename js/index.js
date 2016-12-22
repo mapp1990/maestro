@@ -48,8 +48,6 @@ var app = {
     }
 };
 
-
-
 function insert_master(){
 
     var msj = '<div class="alert alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
@@ -93,6 +91,18 @@ function insert_master(){
                 jQuery("#content").html(data);
                 navigator.vibrate(100);
             }
+        });
+
+        jQuery(document).ready(function() {
+            jQuery('input:text').focus(
+            function(){
+                jQuery(this).css({'background-color' : '#FFFFEEE'});
+            });
+
+            jQuery('input:text').blur(
+            function(){
+                jQuery(this).css({'background-color' : '#DFD8D1'});
+            });
         });
     }
 }
@@ -169,7 +179,6 @@ function new_register(){
 }
 
 function profile(){
-    //alert('Welcome Profile');
 
     var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
     
@@ -186,7 +195,7 @@ function profile(){
 }
 
 function cam_profile(){
-    navigator.camera;
+    document.addEventListener("deviceready", onDeviceReady, false);
 }
 
 function shop(){alert('Welcome Shop');}
@@ -197,3 +206,7 @@ function carg_home(){alert('Welcome Home');}
 function carg_gui(){alert('Welcome Guias');}
 function carg_tuto(){alert('Welcome Tutorial');}
 function carg_exa(){alert('Welcome Simulador');}
+
+function onDeviceReady() {
+    console.log(navigator.camera);
+}
