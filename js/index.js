@@ -194,6 +194,10 @@ function profile(){
         });
 }
 
+function onDeviceReady() {
+    console.log(navigator.camera);
+}
+
 function cam_profile(){
     document.addEventListener("deviceready", onDeviceReady, false);
 }
@@ -207,6 +211,3 @@ function carg_gui(){alert('Welcome Guias');}
 function carg_tuto(){alert('Welcome Tutorial');}
 function carg_exa(){alert('Welcome Simulador');}
 
-function onDeviceReady() {
-    console.log(navigator.camera);
-}
