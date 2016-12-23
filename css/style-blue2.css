@@ -203,8 +203,8 @@ input.input-lg[type="text"]{
 	display:table-cell
 }
 #icon-options i{
-	padding: 20px;
-    font-size: 40px;
+	padding: 10px;
+    font-size: 30px;
     color: #333;
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;

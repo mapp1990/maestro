@@ -54,14 +54,17 @@ function insert_master(){
     var error = 0;
     var valores;
 
-    if(document.getElementById('user').value == ''){
-        msj = msj + " - Debe llenar el campo Usuario para iniciar sesion.<br>";
-        error ++;
-    } 
+    if(document.getElementById('usr').value == ''){
 
-    if(document.getElementById('pass').value == ''){
-        msj = msj + " - Debe llenar el campo Contraseña para iniciar sesion.<br>";
-        error ++;
+        if(document.getElementById('user').value == ''){
+            msj = msj + " - Debe llenar el campo Usuario para iniciar sesion.<br>";
+            error ++;
+        } 
+
+        if(document.getElementById('pass').value == ''){
+            msj = msj + " - Debe llenar el campo Contraseña para iniciar sesion.<br>";
+            error ++;
+        }
     }
 
     if(error != 0){
@@ -76,11 +79,16 @@ function insert_master(){
 
     }else{
         
-        valores = 'user=' + document.getElementById('user').value + '&pass='+document.getElementById('pass').value;
+        if(document.getElementById('usr').value == ''){
 
-        document.getElementById("theme-options").style.visibility = "visible";
-        document.getElementById('usr').value = document.getElementById('user').value;
-        document.getElementById('psw').value = document.getElementById('pass').value;
+            valores = 'user=' + document.getElementById('user').value + '&pass='+document.getElementById('pass').value;
+
+            document.getElementById("theme-options").style.visibility = "visible";
+            document.getElementById('usr').value = document.getElementById('user').value;
+            document.getElementById('psw').value = document.getElementById('pass').value;
+        
+        }else
+            valores = 'user=' + document.getElementById('usr').value + '&pass=' +  document.getElementById('psw').value;
 
         jQuery.ajax({
             url:'http://www.maestrobursatil.com/star_sesion_app.php',
@@ -194,6 +202,65 @@ function profile(){
         });
 }
 
+function edit_user(){
+
+    var cambio = 0;
+
+    var user = document.getElementById('usr').value;
+    var pass = document.getElementById('psw').value;
+
+    if(document.getElementById('name').value != ''){ ++ cambio; }
+
+    if(document.getElementById('user').value != ''){ 
+        user = document.getElementById('user').value;
+        ++ cambio; 
+    }
+
+    if(document.getElementById('email').value != ''){ 
+
+        email = document.getElementById('email').value;       
+        re=/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,3})$/
+        
+        if(re.exec(email))
+            ++ cambio;
+        else {
+            var msj = '<div class="alert alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+            msj = msj + 'Advertencia! <br> La dirección de email es incorrecta.<br>';
+            ++ error;
+        } 
+    }
+
+   // if(document.getElementById('pass').value != ''){ ++ cambio; }
+
+    if(cambio == 0){ 
+
+        var error_edit = '<h6 class="head-title animated bounceInDown animation-delay-8" style="font-size: 1.5em; margin-top:200px">No se realizo ningún cambio.</h6>';
+        error_edit = error_edit + '<a href="index.html"><img style="margin-top:20px" src="img/icon_int_master.png" alt="" class="aligncenter animated bounceIn animation-delay-5 btn-master"></a>';
+
+         jQuery.ajax({
+            type: 'POST',
+            dataType :  'html',
+            success: jQuery('#content').html(error_edit)
+        });  
+    }
+    else{
+
+        var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&new_name=' + document.getElementById('name').value + '&new_user=' + document.getElementById('user').value + '&new_email=' + document.getElementById('email').value;
+
+        jQuery.ajax({
+                url:'http://www.maestrobursatil.com/edit_profile.php',
+                type:'POST',
+                data:valores,
+                dataType:'html',
+                success:function(data){
+                   jQuery("#content").html(data);
+                    navigator.vibrate(100);
+                    document.getElementById('usr').value = user;
+                }
+        });
+    }
+}
+
 function onDeviceReady() {
     console.log(navigator.camera);
 }
@@ -209,5 +276,20 @@ function close(){alert('Welcome Close');}
 function carg_home(){alert('Welcome Home');}
 function carg_gui(){alert('Welcome Guias');}
 function carg_tuto(){alert('Welcome Tutorial');}
-function carg_exa(){alert('Welcome Simulador');}
+
+function carg_exa(){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
+    
+    jQuery.ajax({
+            url:'http://www.maestrobursatil.com/app_simu.php',
+            type:'POST',
+            data:valores,
+            dataType:'html',
+            success:function(data){
+                jQuery("#content").html(data);
+                navigator.vibrate(100);
+            }
+        });
+}
 
