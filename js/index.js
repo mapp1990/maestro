@@ -293,3 +293,20 @@ function carg_exa(){
         });
 }
 
+function simulador_sel(id_simu){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_simu=' + id_simu;
+    alert(valores);
+    jQuery.ajax({
+        url:'http://www.maestrobursatil.com/app_simu_pru.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
+
+}
+
