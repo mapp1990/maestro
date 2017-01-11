@@ -275,7 +275,39 @@ function close(){alert('Welcome Close');}
 
 function carg_home(){alert('Welcome Home');}
 function carg_gui(){alert('Welcome Guias');}
-function carg_tuto(){alert('Welcome Tutorial');}
+
+function carg_tuto(){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
+    
+    jQuery.ajax({
+            url:'http://www.maestrobursatil.com/app_tuto.php',
+            type:'POST',
+            data:valores,
+            dataType:'html',
+            success:function(data){
+                jQuery("#content").html(data);
+                navigator.vibrate(100);
+            }
+        });
+}
+
+function tutorial_sel(id_tuto){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_tuto=' + id_tuto;
+    
+    jQuery.ajax({
+        url:'http://www.maestrobursatil.com/app_tuto_pru.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
+
+}
 
 function carg_exa(){
 
@@ -296,7 +328,7 @@ function carg_exa(){
 function simulador_sel(id_simu){
 
     var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_simu=' + id_simu;
-    alert(valores);
+    
     jQuery.ajax({
         url:'http://www.maestrobursatil.com/app_simu_pru.php',
         type:'POST',
