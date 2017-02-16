@@ -1,13 +1,13 @@
 $(document).ready(function(){
-    $('#bx1').bxSlider();
+    jQuery('#bx1').bxSlider();
 
-    $('#bx2').bxSlider({
+    jQuery('#bx2').bxSlider({
         hideControlOnEnd: true,
         captions: true,
         pager: false
     })
 
-    $('#bx3').bxSlider({
+    jQuery('#bx3').bxSlider({
         hideControlOnEnd: true,
         minSlides: 3,
         maxSlides: 3,
@@ -20,7 +20,7 @@ $(document).ready(function(){
         prevText: '<'
       })
 
-    $('#bx4').bxSlider({
+    jQuery('#bx4').bxSlider({
         hideControlOnEnd: true,
         minSlides: 4,
         maxSlides: 4,
@@ -33,7 +33,7 @@ $(document).ready(function(){
         prevText: '<',
     })
 
-    $('#bx5').bxSlider({
+    jQuery('#bx5').bxSlider({
         minSlides: 2,
         maxSlides: 3,
         slideWidth: 360,

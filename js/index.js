@@ -342,3 +342,52 @@ function simulador_sel(id_simu){
 
 }
 
+function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
+
+    jQuery("#countdown_dashboard").stopCountDown();
+    
+    var pregunta = preg;
+    var n_contes = 0;
+    var rep_usu = new Array();
+    
+    for(var i = 0; i < pregunta.length; ++i){
+        
+        if(pregunta[i] != '[' && pregunta[i] != ']' && pregunta[i] != '"' && pregunta[i] != ','){
+            if(document.getElementById('chA_' + pregunta[i]).checked == true){++n_contes; rep_usu[i] = 1;}
+            else if(document.getElementById('chB_' + pregunta[i]).checked == true){++n_contes; rep_usu[i] = 2;}
+            else if(document.getElementById('chC_' + pregunta[i]).checked == true){++n_contes; rep_usu[i] = 3;}
+            else if(document.getElementById('chD_' + pregunta[i]).checked == true){++n_contes; rep_usu[i] = 4;}
+            else rep_usu[i] = 0;
+        }
+    }
+    
+    var hor = jQuery("#hor1").text().charAt(1) + jQuery("#hor2").text().charAt(1);
+    var min = jQuery("#min1").text().charAt(1) + jQuery("#min2").text().charAt(1);
+    var seg = jQuery("#seg1").text().charAt(1) + jQuery("#seg2").text().charAt(1);
+    
+    var time = hor + ":" + min + ":" + seg;
+    
+    var valores =   'id_usu=' + id_usu +
+                    '&estab=' + estab +
+                    '&ids_preg=' + JSON.stringify(preg) + 
+                    '&rep_usu=' + JSON.stringify(rep_usu) +
+                    '&rep_cor=' + JSON.stringify(rep_cor) +
+                    '&mot_ter=' + mot_ter +
+                    '&n_contes=' + n_contes +
+                    '&id_exa=' + id_exa +
+                    '&id_tem=' + JSON.stringify(id_tem) +
+                    '&name_tem=' + JSON.stringify(name_tem) +
+                    '&time=' + time;
+    
+    jQuery.ajax({
+        url:"http://www.maestrobursatil.com/app_cal_simu.php",
+        type: "POST",
+        dataType :  "html" , 
+        data: valores,
+        success: function ( data ){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
+}
+
