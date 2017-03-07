@@ -17,7 +17,7 @@
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
      KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
-    under the License.
+    under the License..
 -->
 <html>
     <head>
@@ -44,6 +44,26 @@
         <link href="css/width-full.css" rel="stylesheet" media="screen" title="default">
         <link href="css/buttons.css" rel="stylesheet" media="screen">        
         <link href="css/templates.css" rel="stylesheet" media="screen">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="presentacion/css/reveal.css">
+        <link rel="stylesheet" href="presentacion/css/theme/black.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="presentacion/lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'presentacion/css/print/pdf.css' : 'presentacion/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 
     </head>
     <body>
@@ -134,7 +154,11 @@
             <!--script type="text/javascript" src="js/app.js"></script-->
             <script type="text/javascript" src="js/carousels.js"></script>
 
-        </header>
+            <script src="presentacion/lib/js/head.min.js"></script>
+            <script src="presentacion/js/reveal.js"></script>
+
+
+            </header>
 
         <style type='text/css'>
             html,body{ margin:0px; height:100%; padding: 0px; }
