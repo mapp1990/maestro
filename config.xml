@@ -22,11 +22,7 @@
   <preference name="auto-hide-splash-screen" value="true"/>
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="14"/>
-  <preference name="android-installLocation" value="auto"/>
-
-  <plugin name="cordova-plugin-battery-status" spec="~1.2.1" />
-  <plugin name="cordova-plugin-camera" spec="~2.3.1" />
-  
+  <preference name="android-installLocation" value="auto"/>  
   
   <plugin name="cordova-plugin-device" spec="~1.1.4" />
   <plugin name="cordova-plugin-device-motion" spec="~1.2.3" />
