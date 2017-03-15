@@ -611,7 +611,7 @@ background-repeat:repeat;padding-bottom:30px}
 	.btn-simu{
 		width: 170px; 
 		margin-top: -180%;
-	}	
+	}
 }
 
 @media (min-width: 800px){
@@ -629,3 +629,36 @@ background-repeat:repeat;padding-bottom:30px}
 		margin-top: -170%;
 	}
 }
+
+@media(max-height: 500px){
+
+		.btn-master{
+			width: 200px;
+			margin-top: 10%;
+			}    
+
+		.btn-gui{
+			margin-top: -17%;
+			margin-left: 21%;
+			width: 100px;
+			}    
+
+		.btn-tuto{
+			margin-top: -10%;
+			margin-left: 25%;
+			width: 100px;
+			}    
+
+		.btn-simu{
+			margin-top: -75%;
+			width: 100px;
+		}
+
+		.foot_logos{
+			position: absolute;
+			width:50%; 
+		    margin-left: 5%;
+		    top: 87%;
+		    left: 0;
+		}
+	}
