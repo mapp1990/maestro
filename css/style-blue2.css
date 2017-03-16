@@ -485,7 +485,7 @@ input.input-lg[type="text"]{
 }
 
 @media (max-width:991px){
-	.wrap-primary{padding:20px 0}
+	.wrap-primary{padding:0px}
 	.header-full-icons{margin-top:40px}
 	.head-title{
 		font-size:25px;
@@ -615,9 +615,7 @@ background-repeat:repeat;padding-bottom:30px}
 }
 
 @media (max-width: 320px){
-	.btn-tuto{
-		margin-top: 5%
-	}
+	.btn-tuto{ margin-top: 5% }
 }
 
 @media (min-width: 800px){
