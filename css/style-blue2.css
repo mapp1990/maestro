@@ -334,7 +334,7 @@ input.input-lg[type="text"]{
 	position:fixed;
 	top:50px;
 	left:-260px;
-	z-index:1000;
+	z-index:2000;
 	-webkit-transition:all .25s ease;
 	-moz-transition:all .25s ease;
 	-ms-transition:all .25s ease;
@@ -611,6 +611,12 @@ background-repeat:repeat;padding-bottom:30px}
 	.btn-simu{
 		width: 170px; 
 		margin-top: -180%;
+	}
+}
+
+@media (max-width: 320px){
+	.btn-tuto{
+		margin-top: 5%
 	}
 }
 
