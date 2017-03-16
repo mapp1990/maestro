@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ustarizabogados.maestro" version="1.0.6">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ustarizabogados.maestro" version="1.0.7">
 
   <name>Maestro Bursatil</name>
   <description>Aplicación numero 1 para el estudio del mercado de valores.</description>
@@ -22,7 +22,7 @@
   <preference name="auto-hide-splash-screen" value="true"/>
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="14"/>
-  <preference name="android-installLocation" value="auto"/>  
+  <preference name="android-installLocation" value="auto"/> 
   
   <plugin name="cordova-plugin-device" spec="~1.1.4" />
   <plugin name="cordova-plugin-device-motion" spec="~1.2.3" />
@@ -33,6 +33,9 @@
   <plugin name="cordova-plugin-vibration" spec="~2.1.3" />
   <plugin name="cordova-plugin-statusbar" spec="~2.2.1" />
   <plugin name="cordova-plugin-media" spec="~2.4.1" />
+
+  <plugin name="cordova-plugin-file" spec="~4.3.1" />
+  <plugin name="cordova-plugin-file-transfer" spec="~1.6.1" />
 
   <icon src="icon.png"/>
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
