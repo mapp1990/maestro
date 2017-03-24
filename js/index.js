@@ -281,15 +281,15 @@ function carg_tuto(){
     var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
     
     jQuery.ajax({
-            url:'http://www.maestrobursatil.com/app_tuto.php',
-            type:'POST',
-            data:valores,
-            dataType:'html',
-            success:function(data){
-                jQuery("#content").html(data);
-                navigator.vibrate(100);
-            }
-        });
+        url:'http://www.maestrobursatil.com/app_tuto.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
 }
 
 function tutorial_sel(id_tuto){
@@ -306,7 +306,44 @@ function tutorial_sel(id_tuto){
             navigator.vibrate(100);
         }
     });
+}
 
+function cal_test(id_preg){
+
+    var id_content = '#div_resul'+id_preg;
+    var id_rcor = 'resp_corr_'+id_preg;
+    var id_expli = 'expli_'+id_preg;
+    
+    var correcta = document.getElementById(id_rcor).value;
+    var explica = document.getElementById(id_expli).value;
+    var contesta = 0; 
+    var class_resp = 'alert-warning';
+
+    var check = new Array();
+    check[1] = 'chA_'+id_preg;
+    check[2] = 'chB_'+id_preg;
+    check[3] = 'chC_'+id_preg;
+    check[4] = 'chD_'+id_preg;
+
+    for(var i = 1; i<check.length; ++i){
+        if(document.getElementById(check[i]).checked == true){
+            if(document.getElementById(check[i]).value === correcta){
+                class_resp = 'alert-success';
+            }else class_resp = 'alert-danger';
+        } 
+    }
+
+    var msj = '<div class="alert '+ class_resp +'" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+    msj = msj + '<p>' + explica + '</p>';
+    msj = msj + '</div>';
+
+    alert(msj);
+
+    jQuery.ajax({
+        type: 'POST',
+        dataType :  'html',
+        success: jQuery(id_content).html(msj)
+    }); 
 }
 
 function carg_exa(){
@@ -314,15 +351,15 @@ function carg_exa(){
     var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
     
     jQuery.ajax({
-            url:'http://www.maestrobursatil.com/app_simu.php',
-            type:'POST',
-            data:valores,
-            dataType:'html',
-            success:function(data){
-                jQuery("#content").html(data);
-                navigator.vibrate(100);
-            }
-        });
+        url:'http://www.maestrobursatil.com/app_simu.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
 }
 
 function simulador_sel(id_simu){
@@ -339,7 +376,6 @@ function simulador_sel(id_simu){
             navigator.vibrate(100);
         }
     });
-
 }
 
 function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
