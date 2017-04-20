@@ -68,28 +68,28 @@
     </head>
     <body>
         
-       <header id="header-full-home" class="header-full">
+        <header id="header-full-home" class="header-full">
         
-        <div id="theme-options" style="visibility: hidden;">
+            <div id="theme-options" style="visibility: hidden;">
 
-            <div id="body-options">
-                <a href="javascript:insert_master();"> <h3 style="color: #333;"><i class="fa fa-home"></i> - Inicio</h3> </a>
-                
-                <a href="javascript:profile();"> <h3 style="color: #333;"><i class="fa fa-user"></i> - Perfil</h3> </a>
-                <a href="javascript:shop();"> <h3 style="color: #333;"><i class="fa fa-shopping-cart"></i> - Tienda</h3> </a>
-                <a href="javascript:demo();"> <h3 style="color: #333;"><i class="fa fa-laptop"></i> - Demo</h3> </a>
-                <a href="javascript:close();"> <h3 style="color: #333;"><i class="fa fa-sign-out"></i> - Salir</h3> </a>
+                <div id="body-options">
+                    <a href="javascript:insert_master();"> <h3 style="color: #333;"><i class="fa fa-home"></i> - Inicio</h3> </a>                
+                    <a href="javascript:profile();"> <h3 style="color: #333;"><i class="fa fa-user"></i> - Perfil</h3> </a>
 
-                
-                <input type="hidden" id="usr" value="">
-                <input type="hidden" id="psw" value="">
+                    <a href="javascript:shop();"> <h3 style="color: #333;"><i class="fa fa-shopping-cart"></i> - Tienda</h3> </a>
+                    <a href="javascript:demo();"> <h3 style="color: #333;"><i class="fa fa-laptop"></i> - Demo</h3> </a>
+                    <a href="javascript:close();"> <h3 style="color: #333;"><i class="fa fa-sign-out"></i> - Salir</h3> </a>
 
+                    
+                    <input type="hidden" id="usr" value="">
+                    <input type="hidden" id="psw" value="">
+
+                </div>
+
+                <div id="icon-options">
+                    <i class="fa fa-gears fa-2x fa-flip-horizontal"></i>
+                </div>
             </div>
-
-            <div id="icon-options">
-                <i class="fa fa-gears fa-2x fa-flip-horizontal"></i>
-            </div>
-        </div>
 
 
             <div id="content" class="wrap-primary" style="height: 100% !important;">
@@ -131,7 +131,7 @@
 
             </div>
 
-            <!--script type="text/javascript" src="js/cordova.js"></script-->
+            <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
             <script type="text/javascript" src="js/template.js"></script>
             <script type="text/javascript">app.initialize();</script>
@@ -161,13 +161,10 @@
 
             <script src="presentacion/lib/js/head.min.js"></script>
             <script src="presentacion/js/reveal.js"></script>
-
-
-            </header>
+        </header>
 
         <style type='text/css'>
             html,body{ margin:0px; height:100%; padding: 0px; }
-        </style>
-    
+        </style>    
     </body>    
 </html>

@@ -269,7 +269,22 @@ function cam_profile(){
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
-function shop(){alert('Welcome Shop');}
+function shop(){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
+
+    jQuery.ajax({
+        url:'http://www.maestrobursatil.com/carg_parrilla.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+        }
+    });
+    
+    alert('Welcome Shop');
+}
 function demo(){alert('Welcome Demo');}
 function close(){alert('Welcome Close');}
 
@@ -317,7 +332,8 @@ function cal_test(id_preg){
     var correcta = document.getElementById(id_rcor).value;
     var explica = document.getElementById(id_expli).value;
     var contesta = 0; 
-    var class_resp = 'alert-warning';
+
+    var resp = 'Pregunta no Contestada.';
 
     var check = new Array();
     check[1] = 'chA_'+id_preg;
@@ -328,16 +344,17 @@ function cal_test(id_preg){
     for(var i = 1; i<check.length; ++i){
         if(document.getElementById(check[i]).checked == true){
             if(document.getElementById(check[i]).value === correcta){
-                class_resp = 'alert-success';
-            }else class_resp = 'alert-danger';
+                resp = 'Respuesta Correcta.';
+            }else resp = 'Respuesta Incorrecta.';
         } 
     }
 
-    var msj = '<div class="alert '+ class_resp +'" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+    var msj = '<div><br><h4>'+ resp +'</h4>';
+    msj = msj + '<h5>Explicación:</h5>';
     msj = msj + '<p>' + explica + '</p>';
     msj = msj + '</div>';
 
-    alert(msj);
+    //alert(msj);
 
     jQuery.ajax({
         type: 'POST',
@@ -425,5 +442,151 @@ function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
             navigator.vibrate(100);
         }
     });
+}
+
+/* Modulo de compra y Venta de los productos */
+
+function add_car(id, pop){
+    
+    id_pop = '#' + pop + id;
+    id_a = pop + id;
+    
+    if(pop == 'pop_gui_')tp = 1;
+    else if(pop == 'pop_tut_')tp = 2;
+    else if(pop == 'pop_simu_')tp = 3;
+    else if(pop == 'pop_full_')tp = 4;
+    
+    if(document.getElementById('car_produc').value != ''){
+        document.getElementById(id_a).href = '#';
+        var car = document.getElementById('car_produc').value;
+        document.getElementById('car_produc').value = car + '::' + tp + ',' + id;
+        
+    }else{
+        document.getElementById(id_a).href = '#';
+        document.getElementById('car_produc').value = tp + ',' + id;
+    }
+    
+    jQuery(function() {
+        jQuery(id_pop).popover({
+            html : true,
+            content: '<p>Productor Agregado a su carro de compras.<p>',
+            delay: { show: 500, hide: 100 }
+        });
+    });
+
+    setTimeout(function() {
+        $(id_pop).popover('hide');
+    },5000);
+}
+
+function car(user){
+    
+    var valores = "productos=" + document.getElementById('car_produc').value + "&user=" + user;
+    
+    jQuery.ajax({
+        url:"http://www.maestrobursatil.com/templates/protostar/html/carro.php",
+        type: "POST",
+        dataType :  "html", 
+        data: valores,
+        success: function ( data ){
+            jQuery("#car-conte").html(data);
+        }
+    });
+}
+
+function dve_car(){
+    
+    var valores = 'productos=' + document.getElementById('car_produc').value;
+    
+    jQuery.ajax({
+        url:"http://www.maestrobursatil.com/templates/protostar/html/app_shop.php",
+        type: "POST",
+        dataType :  "html",
+        data: valores,
+        success: function ( data ){
+            jQuery("#car-conte").html(data);
+        }
+    });
+}
+
+function env_payu(v_tot, user){
+
+    var valores = 'productos=' + document.getElementById('car_produc').value + '&user=' + user + '&valor=' + v_tot;
+    
+    jQuery.ajax({
+        url:"http://www.maestrobursatil.com/templates/protostar/html/app_hab_pro.php",
+        type: "POST",
+        dataType :  "html", 
+        data: valores,
+        success: function ( data ){
+            jQuery("#div_pag").html(data);
+            
+            jQuery.ajax({
+                url:"/pagos/envio.php",
+                type: "POST",
+                dataType :  "html", 
+                data: valores,
+                success: function ( data ){
+                    jQuery("#div_pag").html(data);
+                }
+            });
+        }
+    });
+    //alert(valores + 'En un momento sera dirijido a nuestra pasarela de pagos.' + v_tot);
+
+}
+
+function env_payuuu(v_tot, user, envio){
+    
+    var msj = 'Los datos de Dirección y Teléfono de contacto son necesarios para garantizar el envio de su producto. <br>';
+    var error = 0;
+    var dir = '';
+    var tel = '';
+
+    if(envio == 1){
+
+        if(document.getElementById('dir_env').value == '' || document.getElementById('tel_contac').value == ''){ error ++; }
+
+        if(error > 0 ){
+            alerta_error = '<div class="alert alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>'+ msj +'</div>';
+
+            jQuery.ajax({
+                type: 'POST',
+                dataType :  'html',
+                success: jQuery('#mensaje_comp').html(alerta_error)
+            });
+
+        }
+
+        dir = document.getElementById('dir_env').value;
+        tel = document.getElementById('tel_contac').value;
+    }
+
+    if(error == 0){
+
+        var valores = 'productos=' + document.getElementById('car_produc').value + '&user=' + user + '&valor=' + v_tot + '&envio=' + envio + '&dir=' + dir + '&tel=' + tel;
+
+        jQuery.ajax({
+            url:"http://www.maestrobursatil.com/templates/protostar/html/app_hab_pro.php",
+            type: "POST",
+            dataType :  "html", 
+            data: valores,
+            success: function ( data ){
+                jQuery("#div_pag").html(data);  
+                        
+                jQuery.ajax({
+                    url:"http://www.maestrobursatil.com/pagos/app_envio_pr.php",
+                    type: "POST",
+                    dataType :  "html", 
+                    data: valores,
+                    success: function ( data ){
+                        jQuery("#div_pag").html(data);
+                    }
+                });
+            }
+        });
+    }
+    //alert(valores + 'En un momento sera dirijido a nuestra pasarela de pagos.' + v_tot);
+
 }
 
