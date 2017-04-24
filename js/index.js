@@ -282,12 +282,10 @@ function shop(){
             jQuery("#content").html(data);
         }
     });
-    
-    alert('Welcome Shop');
 }
+
 function demo(){alert('Welcome Demo');}
 function close(){alert('Welcome Close');}
-
 function carg_home(){alert('Welcome Home');}
 function carg_gui(){alert('Welcome Guias');}
 
@@ -469,7 +467,7 @@ function add_car(id, pop){
     jQuery(function() {
         jQuery(id_pop).popover({
             html : true,
-            content: '<p>Productor Agregado a su carro de compras.<p>',
+            content: '<p>Producto Agregado a su carro de compras.<p>',
             delay: { show: 500, hide: 100 }
         });
     });
@@ -484,7 +482,7 @@ function car(user){
     var valores = "productos=" + document.getElementById('car_produc').value + "&user=" + user;
     
     jQuery.ajax({
-        url:"http://www.maestrobursatil.com/templates/protostar/html/carro.php",
+        url:"http://www.maestrobursatil.com/templates/protostar/html/app_carro.php",
         type: "POST",
         dataType :  "html", 
         data: valores,
@@ -533,7 +531,6 @@ function env_payu(v_tot, user){
         }
     });
     //alert(valores + 'En un momento sera dirijido a nuestra pasarela de pagos.' + v_tot);
-
 }
 
 function env_payuuu(v_tot, user, envio){
@@ -587,6 +584,5 @@ function env_payuuu(v_tot, user, envio){
         });
     }
     //alert(valores + 'En un momento sera dirijido a nuestra pasarela de pagos.' + v_tot);
-
 }
 
