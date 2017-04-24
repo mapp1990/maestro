@@ -284,10 +284,39 @@ function shop(){
     });
 }
 
-function demo(){alert('Welcome Demo');}
+function demo(){
+    
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
+    
+    jQuery.ajax({
+        url:'http://www.maestrobursatil.com/list_demo.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
+}
 function close(){alert('Welcome Close');}
 function carg_home(){alert('Welcome Home');}
-function carg_gui(){alert('Welcome Guias');}
+
+function carg_gui(){
+
+    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value;
+    
+    jQuery.ajax({
+        url:'http://www.maestrobursatil.com/app_guias.php',
+        type:'POST',
+        data:valores,
+        dataType:'html',
+        success:function(data){
+            jQuery("#content").html(data);
+            navigator.vibrate(100);
+        }
+    });
+}
 
 function carg_tuto(){
 
