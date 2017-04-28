@@ -608,9 +608,10 @@ background-repeat:repeat;padding-bottom:30px}
 }
 
 .image_profile{
-	margin-top: 30px;
-    width: 150px;
-    border-radius: 60%;
+	margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
 }
 
 .row{
