@@ -299,8 +299,7 @@ function demo(){
         }
     });
 }
-function close(){alert('Welcome Close');}
-function carg_home(){alert('Welcome Home');}
+function carg_home(){}
 
 function carg_gui(){
 
