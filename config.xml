@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ustarizabogados.maestro" version="1.1.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.ustarizabogados.maestro" version="1.1.6">
 
   <name>Maestro Bursatil</name>
   <description>Aplicación numero 1 para el estudio del mercado de valores.</description>
@@ -36,6 +36,7 @@
   <plugin name="cordova-plugin-statusbar" spec="~2.2.1" />
   <plugin name="cordova-plugin-media" spec="~2.4.1" />
   <plugin name="cordova-plugin-crosswalk-webview" spec="2.2.0" source="npm" />
+  <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />  
   
   <plugin name="cordova-plugin-file" spec="~4.3.1" />
   <plugin name="cordova-plugin-file-transfer" spec="~1.6.1" />  
@@ -71,14 +72,14 @@
   <gap:splash src="res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
   <gap:splash src="res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
 
-  <access origin="*" subdomains="true" />
-  <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />  
-  <allow-intent href="http://*/*"/>
-  <allow-intent href="https://*/*"/>
-  <allow-intent href="tel:*"/>
-  <allow-intent href="sms:*"/>
-  <allow-intent href="mailto:*"/>
-  <allow-intent href="geo:*"/>
+  <access origin="*" launch-external="yes" />
+  <access origin="http://*/*/*/" launch-external="yes"/>
+  <access origin="sms:*" launch-external="yes" />
+  <access origin="geo:*" launch-external="yes" />
+  <access origin="http://*" launch-external="yes" />
+  <access origin="https://*" launch-external="yes" />
+  <access origin="*" launch-external="yes" />
+  <allow-navigation href="*" />
 
   <platform name="android">
     <allow-intent href="market:*"/>
