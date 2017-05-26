@@ -12,12 +12,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Exo', sans-serif;
   background: #222;
   background-color: #222; }
 
 .reveal {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Exo', sans-serif;
   font-size: 38px;
   font-weight: normal;
   color: #fff; }
@@ -43,7 +43,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #fff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Exo', sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
