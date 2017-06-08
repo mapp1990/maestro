@@ -83,7 +83,6 @@ function insert_master(){
 
             valores = 'user=' + document.getElementById('user').value + '&pass='+document.getElementById('pass').value;
 
-            document.getElementById("theme-options").style.visibility = "visible";
             document.getElementById('usr').value = document.getElementById('user').value;
             document.getElementById('psw').value = document.getElementById('pass').value;
         
