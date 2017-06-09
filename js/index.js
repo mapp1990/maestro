@@ -96,7 +96,7 @@ function insert_master(){
             dataType:'html',
             success:function(data){
                 jQuery("#content").html(data);
-                navigator.vibrate(100);
+                jQuery("#header").css({'display' : 'block'});
             }
         });
 
@@ -196,7 +196,6 @@ function profile(){
             dataType:'html',
             success:function(data){
                 jQuery("#content").html(data);
-                navigator.vibrate(100);
             }
         });
 }
@@ -253,7 +252,6 @@ function edit_user(){
                 dataType:'html',
                 success:function(data){
                    jQuery("#content").html(data);
-                    navigator.vibrate(100);
                     document.getElementById('usr').value = user;
                 }
         });
@@ -294,7 +292,6 @@ function demo(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -311,7 +308,6 @@ function carg_gui(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -327,7 +323,6 @@ function carg_tuto(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -343,7 +338,6 @@ function tutorial_sel(id_tuto){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -399,7 +393,6 @@ function carg_exa(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -415,7 +408,6 @@ function simulador_sel(id_simu){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
@@ -464,7 +456,6 @@ function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
         data: valores,
         success: function ( data ){
             jQuery("#content").html(data);
-            navigator.vibrate(100);
         }
     });
 }
