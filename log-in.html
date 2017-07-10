@@ -70,27 +70,14 @@
 
     </head>
     <body>
-
-    <nav class="navbar navbar-static-top navbar-default navbar-header-full navbar-dark" role="navigation" id="header" style="display: none; text-align: center; margin-top: 20px;">
-                <ul class="top-nav-social hidden-sm" style="margin: 0px; margin-top: 6px;">
-                    <li><a href="javascript:insert_master();" class="animated fadeIn animation-delay-6 rss"><i class="fa fa-home"></i></a></li>
-                    <li><a href="javascript:profile();" class="animated fadeIn animation-delay-7 twitter"><i class="fa fa-user"></i></a></li>
-                    <li><a href="javascript:shop();" class="animated fadeIn animation-delay-8 facebook"><i class="fa fa-shopping-cart"></i></a></li>
-                    <li><a href="index.html" class="animated fadeIn animation-delay-9 googleplus"><i class="fa fa-sign-out"></i></a></li>
-                </ul>
-    </nav>
-
         
         <header id="header-full-home" class="header-full">
 
-            
-
-                            
             <input type="hidden" id="usr" value="">
             <input type="hidden" id="psw" value="">
             
 
-            <div id="content" class="wrap-primary" style="height: 100% !important; font-weight: 300;">
+            <div id="content" class="wrap-primary" style="font-weight: 300;">
 
                 <div class="login-form-full">
                     <div class="fix-box">
@@ -102,17 +89,17 @@
                             <form role="form" action="" target="msj_cambio" method="post" enctype="multipart/form-data">
                             <br>
 
-                                <div class="input-group" style="width: 80%; margin-left: 10%;">
-                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                <div class="input-group" style="width: 80%; margin-left: 10%; margin-top: 10%">
+                                    <!--span class="input-group-addon"><i class="fa fa-users"></i></span-->
                                     <input id="user" type="text" class="form-control" placeholder="Usuario">
                                 </div><br>
                                 <div class="input-group" style="width: 80%; margin-left: 10%; margin-bottom: 70px">
-                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña" style="width: 85%;">
+                                    <!--span class="input-group-addon"><i class="fa fa-key"></i></span-->
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña" style="width: 92%;">
                                 </div>
                             
                                 <div class="form-group">
-                                    <a href="javascript:insert_master();" class="btn btn-success btn-ar btn-lg aligncenter" style="margin-bottom: 15px; width: 80%;">Ingresar</a>
+                                    <a href="javascript:insert_master();" id="btn-log" class="btn btn-ar btn-lg aligncenter" style="margin-bottom: 15px; width: 80%;">Ingresar</a>
 
                                     <p style="text-align: center;">
                                         Si aún no tiene una cuenta 
@@ -128,6 +115,42 @@
                 </div> 
 
                 <img src="img/footer.png" alt="" class=" aligncenteranimated bounceIn animation-delay-5 foot_logos" >
+            </div>
+
+            <div class="col-sm-12" id="header" style="display: none; text-align: center; margin-top: 20px; width: 100%">
+
+                <ul class="top-nav-social hidden-sm" style="margin: 0px;">
+
+                    <li>
+                        <a href="javascript:insert_master();" class="animated fadeIn animation-delay-6 rss">
+                            <img src="img/icon_menu_home.png" alt="" class="animated bounceIn animation-delay-5 btn_menu">
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:profile();" class="animated fadeIn animation-delay-7 twitter">
+                            <img src="img/icon_menu_user.png" alt="" class="animated bounceIn animation-delay-5 btn_menu">
+                            <p>Perfil</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:shop();" class="animated fadeIn animation-delay-8 facebook">
+                            <img src="img/icon_menu_shop.png" alt="" class="animated bounceIn animation-delay-5 btn_menu">
+                            <p>Tienda</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html" class="animated fadeIn animation-delay-9 googleplus">
+                            <img src="img/icon_menu_logout.png" alt="" class="animated bounceIn animation-delay-5 btn_menu">
+                            <p>Salir</p>
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
 
             <script type="text/javascript" src="cordova.js"></script>

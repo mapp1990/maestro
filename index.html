@@ -80,61 +80,54 @@
     <body>
         
         <header id="header-full-home" class="header-full">
-        
-            <div id="theme-options" style="visibility: hidden;">
+            <input type="hidden" id="usr" value="demo">
+            <input type="hidden" id="psw" value="demo">
 
-                <div id="body-options">
-                    <a href="javascript:insert_master();"> <h2 style="color: #333;"><i class="fa fa-home"></i> - Inicio</h2> </a>                
-                    <a href="javascript:profile();"> <h2 style="color: #333;"><i class="fa fa-user"></i> - Perfil</h2> </a>
-                    <a href="javascript:shop();"> <h2 style="color: #333;"><i class="fa fa-shopping-cart"></i> - Tienda</h2> </a>
-                    <a href="javascript:demo();"> <h2 style="color: #333;"><i class="fa fa-laptop"></i> - Demo</h2> </a>
-                    <a href="index.html"> <h2 style="color: #333;"><i class="fa fa-sign-out"></i> - Salir</h2> </a>
-
-                    
-                    <input type="hidden" id="usr" value="">
-                    <input type="hidden" id="psw" value="">
-
-                </div>
-
-                <div id="icon-options">
-                    <i class="fa fa-gears fa-2x fa-flip-horizontal"></i>
-                </div>
-            </div>
-
-
-            <div id="content" class="wrap-primary" style="height: 100% !important; font-weight: 300;">
+            <div class="wrap-primary" style="height: 100% !important; font-weight: 300;">
 
                 <div class="login-form-full scroll">
                     <div class="fix-box">
-                        <img src="img/logoMaestro.png" alt="" class="aligncenter animated bounceIn animation-delay-5 image-home">
 
                         <div class="tab-content aligncenter" style="width: 80%;">
 
                             <div class="tab-pane fade active in" id="ini">
-                                <div class="animated fadeInUp animation-delay-8">
-                                    <a href="#q_master" data-toggle="tab" class="btn btn-ar btn-lg aligncenter" style="width: 290px; font-weight: 300;"><p style="border-bottom: 1px solid #ffffff;">QUÉ ES MAESTRO BURSÁTIL</p></a>
-                                    <a href="#modalidades" data-toggle="tab" class="btn btn-ar btn-lg aligncenter" style="width: 170px; font-weight: 300;"><p style="border-bottom: 1px solid #ffffff;">MODALIDADES</p></a>
-                                    <a href="#C_fun" data-toggle="tab" class="btn btn-ar btn-lg aligncenter" style="width: 190px; font-weight: 300;"><p style="border-bottom: 1px solid #ffffff;">COMO FUNCIONA</p></a>
-                                    <a href="#demo" data-toggle="tab" class="btn btn-ar btn-lg aligncenter" style="width: 100px; font-weight: 300;"><p style="border-bottom: 1px solid #ffffff;">DEMO</p></a>
-                                    <a href="#precios" data-toggle="tab" class="btn btn-ar btn-lg aligncenter" style="margin-bottom: 40px; width: 110px; font-weight: 300;"><p style="border-bottom: 1px solid #ffffff;">PRECIOS</p></a>              
+                                
+                                <img src="img/logoMaestro.png" alt="" class="aligncenter animated bounceIn animation-delay-5 image-home">
+
+                                <div class="animated fadeInUp animation-delay-8" style="margin-top: 30%;">
+                                    <a href="#q_master" onclick="var scrollEje_Y = jQuery(window).scrollTop(); jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');" data-toggle="tab" class="btn btn-lg" style="font-weight: 300;">Qué es ?</a><br>
+                                    <a href="#C_fun" onclick="var scrollEje_Y = jQuery(window).scrollTop(); jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');" data-toggle="tab" class="btn btn-lg" style="font-weight: 300;">Cómo Funciona ?</a><br>
+                                    <a href="#modalidades" onclick="var scrollEje_Y = jQuery(window).scrollTop(); jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');" data-toggle="tab" class="btn btn-lg" style="font-weight: 300;">Modalidades</a><br>                                    
+                                    <a href="#demo" onclick="var scrollEje_Y = jQuery(window).scrollTop(); jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');" data-toggle="tab" class="btn btn-lg" style="font-weight: 300;">Demo</a><br>
+                                    <a href="#precios" onclick="var scrollEje_Y = jQuery(window).scrollTop(); jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');" data-toggle="tab" class="btn btn-lg" style="font-weight: 300;">Precios</a><br>
                                 </div>
-                                <div class="form-group">
-                                    <a href="log-in.html" data-transition="slide" class="btn btn-success btn-ar" style="width: 49%; font-weight: 300;">Ya Registrado</a>
-                                    <a href="form_register.html" data-transition="slide" class="btn btn-danger btn-ar" style="width: 49%; font-weight: 300;">Registrarse</a>
+                                <div class="form-group" id="btns-par">
+                                    <a href="log-in.html" data-transition="slide" class="btn btn-ar" style="width: 49%; font-weight: 300;">Ya Registrado</a>
+                                    <a href="form_register.html" data-transition="slide" class="btn btn-ar" style="width: 49%; font-weight: 300;">Registrarse</a>
                                     <!--a href="index.html" class="btn btn-warning btn-ar" style="width: 99.9%; font-weight: 300; margin-left: 0%; margin-top: 3px; background: #3B5998; border: 1px solid #2F4677;"><i class="fa fa-facebook-official"></i> Ingresar con facebook</a-->
                                 </div>
                             </div>
+                    <!-- TAB - QUE ES MAESTRO -->
+                            <div class="tab-pane fade animated bounceInLeft animation-delay-11" id="q_master">
 
-                            <div class="tab-pane fade" id="q_master" style="text-align: center;">
-                                <h3 class="m-t-10">QUE ES MAESTRO BURSÁTIL ?</h3>
-                                <p>
+                                <a href="#ini" onclick="jQuery('#header-full-home').css('background-position-x', '70%');" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 0px;left: 0px;">
+                                    <img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;">
+                                </a>
+
+                                <h1 style="color:#39708A; padding-top: 0px; margin-bottom: 40%;">QUE ES ?</h1>
+
+                                <p style="text-align: justify;">
                                     Maestro Bursátil es una herramienta que existe en el mercado de valores para que todas aquellas personas que requieren presentar pruebas de certificación ante el AMV, puedan prepararse mediante una plataforma digital que le permitirá a los usuarios prepararse a través de libros, conferencias en video y simulación de exámenes, en cualquier momento, desde cualquier computador o tableta móvil y al ritmo que lo requiera, modulando los contenidos de acuerdo con sus intereses. 
-                                </p><br>
-                                <a href="#ini" data-toggle="tab" class="btn btn-ar btn-warning btn-lg aligncenter foot_logos" style="font-weight: 300; top: 82%">VOLVER</a>
+                                </p><br> 
                             </div>
-
+                    <!-- TAB - MODALIDADES -->
                             <div class="tab-pane fade" id="modalidades">
                                 
+                                <a href="#ini" onclick="jQuery('#header-full-home').css('background-position-x', '70%');" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;">
+                                    <img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;">
+                                </a>
+
+                                <h1 style="color:#39708A; padding-top: 0px;">MODALIDADES</h1>                                
                                 
                                 <div class="panel-body"  style="font-weight: 300; font-size: 15px; padding-top: 0px;">
 
@@ -174,30 +167,27 @@
                                         Además, el simulador presenta los resultados y arroja las estadísticas de efectividad que le permitirán identificar su desempeño. Cuando obtenga los resultados esperados, la herramienta le generará una constancia de efectividad.<br><br><br><br><br><br><br>
                                     </p>
                                 </div>
-
-                                <a href="#ini" data-toggle="tab" class="btn btn-ar btn-warning btn-lg aligncenter foot_logos" style="font-weight: 300; top: 86%">VOLVER</a>
-
                             </div>
-
+                    <!-- TAB - COMO FUNCIONA -->
                             <div class="tab-pane fade" style="text-align: center; font-weight: 300; font-size: 15px;" id="C_fun">
-                                <h3>Como adquirir los productos de Maestro Bursátil?</h3>
+
+                                <a href="#ini" onclick="jQuery('#header-full-home').css('background-position-x', '70%');" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;">
+                                    <img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;">
+                                </a>
+
+                                <h1 style="color:#39708A; padding-top: 0px; margin-bottom: 20%;">Como adquirir los productos de Maestro Bursátil?</h1>
 
                                     <p style="text-align: justify;">Usted puede comprar cada producto por separado (guías, capacitaciones y exámenes) según sus necesidades, pero lo invitamos a que se dirija a nuestra sección de precios y conozca los combos que hemos creado para que tenga una capacitación que le permita aprovechar todas nuestras metodologías de estudio.<br><br>
 
-                                    Una vez haya decidido que producto (s) adquirir lo invitamos registrarse y visitar nuestra sección de compras.<p><br>
-                                <a href="https://www.youtube.com/embed/ivwoSsogQaA"> Ver Video </a>
-                                <a href="#ini" data-toggle="tab" class="btn btn-ar btn-warning btn-lg aligncenter foot_logos" style="font-weight: 300; top: 86%">VOLVER</a>
+                                    Una vez haya decidido que producto (s) adquirir lo invitamos registrarse y visitar nuestra sección de compras.<p><br><br><br>
+                                <a href="https://www.youtube.com/watch?v=ivwoSsogQaA" class="btn btn-ar" target="_blank"> Ver Video </a>
                             </div>
-
-                            <div class="tab-pane fade" id="demo">
-                                <a href="#"><img src="img/icon_int_master.png" alt="" class="aligncenter animated bounceIn animation-delay-5 btn-master-demo">
-                                <a href="javascript:carg_tuto();"><img src="img/icon_int_2.png" alt="" class="animated bounceIn animation-delay-5 btn-tuto-demo"></a>
-                                <a href="javascript:carg_exa();"><img src="img/icon_int_3.png" alt="" class="animated bounceIn animation-delay-5 btn-simu-demo" style=""></a>
-                                <a href="#ini" data-toggle="tab" class="btn btn-ar btn-warning btn-lg aligncenter foot_logos" style="font-weight: 300; top: 86%">VOLVER</a>
-                            </div>
-
-
+                    <!-- TAB - PRECIOS -->
                             <div class="tab-pane fade" id="precios">
+
+                                <a href="#ini" onclick="jQuery('#header-full-home').css('background-position-x', '70%');" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;">
+                                    <img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;">
+                                </a>
 
                                 <div class="panel-heading">
                                     <ul id="myTab" class="nav nav-tabs pull-right">
@@ -408,12 +398,30 @@
                                         <h3 style="margin:0px;">$81.200</h3>
                                     </div>
                                 </div>
-                                <br><br><br><br><br><br><br>
+                            </div>     
 
-                                <a href="#ini" data-toggle="tab" class="btn btn-ar btn-warning btn-lg aligncenter foot_logos" style="font-weight: 300; top: 86%;">VOLVER</a>
+                    <!-- TAB - DEMOSTRACION -->
+                            <div class="tab-pane fade" id="demo">
+                                <a href="#ini" onclick="jQuery('#header-full-home').css('background-position-x', '70%');" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;">
+                                    <img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;">
+                                </a>
+
+                                <div id="content">
+                                    <h1 style="color:#39708A; padding-top: 0px; margin-bottom: 20%;">DEMO</h1>
+
+                                    <a href="javascript:simulador_sel(15);">
+                                        <img src="img/icon_int_3.png" alt="" class="animated bounceIn animation-delay-5 btn-simu-demo">
+                                        <p style="text-align: center;" >Simulador</p>
+                                    </a>
+                                    <a href="javascript:#">
+                                        <img src="img/icon_int_2.png" alt="" class="animated bounceIn animation-delay-5 btn-tuto-demo">
+                                        <p style="text-align: center;" >Tutorias</p>
+                                    </a>
+                                </div>
+
                             </div>
-                        </div>
 
+                        </div>
 
                     </div>
                 </div> 

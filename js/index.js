@@ -45,7 +45,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    } 
 };
 
 function insert_master(){
@@ -96,7 +96,9 @@ function insert_master(){
             dataType:'html',
             success:function(data){
                 jQuery("#content").html(data);
-                jQuery("#header").css({'display' : 'block'});
+                jQuery("#header").css({'display' : 'block', 'position' : 'absolute', 'bottom' : '0px'});
+                var scrollEje_Y = jQuery(window).scrollTop();
+                jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');
             }
         });
 
@@ -323,6 +325,7 @@ function carg_tuto(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
+            jQuery("#header").css({'display' : 'block', 'position' : 'absolute'});
         }
     });
 }
@@ -338,6 +341,7 @@ function tutorial_sel(id_tuto){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
+            jQuery("#header").css({'display' : 'none', 'position' : 'relative'});
         }
     });
 }
@@ -362,15 +366,15 @@ function cal_test(id_preg){
 
     for(var i = 1; i<check.length; ++i){
         if(document.getElementById(check[i]).checked == true){
-            if(document.getElementById(check[i]).value === correcta){
+            if(document.getElementById(check[i]).value == correcta){
                 resp = 'Respuesta Correcta.';
             }else resp = 'Respuesta Incorrecta.';
         } 
     }
 
-    var msj = '<div><br><h4>'+ resp +'</h4>';
-    msj = msj + '<h5>Explicación:</h5>';
-    msj = msj + '<p>' + explica + '</p>';
+    var msj = '<div><br><h4 style="color: #333; text-shadow: none;">'+ resp +'</h4>';
+    msj = msj + '<h5 style="color: #333; text-shadow: none;">Explicación:</h5>';
+    msj = msj + '<p style="color: #333; text-shadow: none;">' + explica + '</p>';
     msj = msj + '</div>';
 
     //alert(msj);
@@ -393,13 +397,15 @@ function carg_exa(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
+            jQuery("#header").css({'display' : 'block', 'position' : 'absolute'});
         }
     });
 }
 
 function simulador_sel(id_simu){
 
-    var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_simu=' + id_simu;
+    if(id_simu != 15 ) { var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_simu=' + id_simu; }
+    else { var valores = 'usr=' + 'demo' + '&psw=' + 'demo' + '&id_simu=' + id_simu; } 
     
     jQuery.ajax({
         url:'http://www.maestrobursatil.com/app_simu_pru.php',
@@ -408,6 +414,7 @@ function simulador_sel(id_simu){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
+            jQuery("#header").css({'display' : 'none', 'position' : 'relative'});
         }
     });
 }
