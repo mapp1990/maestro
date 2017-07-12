@@ -457,12 +457,12 @@ function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
                     '&time=' + time;
     
     jQuery.ajax({
-        url:"http://www.maestrobursatil.com/app_cal_simu.php",
+        url:"http://www.maestrobursatil.com/templates/master_simulador/html/cal_simu_app.php",
         type: "POST",
         dataType :  "html" , 
         data: valores,
         success: function ( data ){
-            jQuery("#content").html(data);
+            jQuery("#div_simul").html(data);
         }
     });
 }
