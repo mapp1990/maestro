@@ -405,7 +405,9 @@ function carg_exa(){
 function simulador_sel(id_simu){
 
     if(id_simu != 15 ) { var valores = 'usr=' + document.getElementById('usr').value + '&psw=' + document.getElementById('psw').value + '&id_simu=' + id_simu; }
-    else { var valores = 'usr=' + 'demo' + '&psw=' + 'demo' + '&id_simu=' + id_simu; } 
+    else { 
+        var valores = 'usr=' + 'demo' + '&psw=' + 'demo' + '&id_simu=' + id_simu; 
+    } 
     
     jQuery.ajax({
         url:'http://www.maestrobursatil.com/app_simu_pru.php',
@@ -464,6 +466,18 @@ function stop(id_usu, estab, preg, rep_cor, mot_ter, id_exa, id_tem, name_tem){
         success: function ( data ){
             jQuery("#div_simul").html(data);
         }
+    });
+}
+
+function escojer_demo(){
+
+    var onclick = "jQuery('#header-full-home').css('background-position-x', '70%');";
+    var opc_demos = '<a href="#ini" id = "atras_dem_simu" onclick="'+ onclick +'" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;"><img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;"></a><h1 style="color:#39708A; padding-top: 0px; margin-bottom: 10%;">DEMO</h1><a href="javascript:simulador_sel(15);"><img src="img/icon_int_3.png" alt="" class="animated bounceIn animation-delay-5 btn-simu-demo"><p style="text-align: center;" >Simulador</p></a><a href="javascript:#"><img src="img/icon_int_2.png" alt="" class="animated bounceIn animation-delay-5 btn-tuto-demo"><p style="text-align: center;" >Tutorias</p></a>';
+    
+    jQuery.ajax({
+        type:'POST',
+        dataType:'html',
+        success: jQuery('#content').html(opc_demos)
     });
 }
 
