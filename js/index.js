@@ -99,6 +99,7 @@ function insert_master(){
                 jQuery("#header").css({'display' : 'block', 'position' : 'absolute', 'bottom' : '0px'});
                 var scrollEje_Y = jQuery(window).scrollTop();
                 jQuery('#header-full-home').css('background-position', 'left ' + ((scrollEje_Y * -0.02)) + 'px');
+                jQuery('#content').css('padding-top', '15%');
             }
         });
 
@@ -312,6 +313,7 @@ function carg_gui(){
         dataType:'html',
         success:function(data){
             jQuery("#content").html(data);
+            jQuery('#content').css('padding-top', '0px');
         }
     });
 }
@@ -328,6 +330,7 @@ function carg_tuto(){
         success:function(data){
             jQuery("#content").html(data);
             jQuery("#header").css({'display' : 'block', 'position' : 'absolute'});
+            jQuery('#content').css({'padding-top' : '0px', 'background' : 'transparent'});
         }
     });
 }
@@ -344,6 +347,7 @@ function tutorial_sel(id_tuto){
         success:function(data){
             jQuery("#content").html(data);
             jQuery("#header").css({'display' : 'none', 'position' : 'relative'});
+            jQuery('#content').css({'padding-top' : '0px', 'background' : '#fff'});
         }
     });
 }
@@ -400,6 +404,7 @@ function carg_exa(){
         success:function(data){
             jQuery("#content").html(data);
             jQuery("#header").css({'display' : 'block', 'position' : 'absolute'});
+            jQuery('#content').css({'padding-top' : '0px', 'background' : 'transparent'});
         }
     });
 }
@@ -419,6 +424,7 @@ function simulador_sel(id_simu){
         success:function(data){
             jQuery("#content").html(data);
             jQuery("#header").css({'display' : 'none', 'position' : 'relative'});
+            jQuery("#content").css({'background' : '#fff', 'height' : '100%'});
         }
     });
 }

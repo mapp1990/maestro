@@ -397,8 +397,6 @@ input{
 	.carousel-list li span{padding:5px}
 	.carousel-list li i{width:42px;padding:5px}
 	.carousel-control{left:auto;bottom:auto;top:20px}
-	.carousel-control.left{right:50px}
-	.carousel-control.right{right:0}
 	
 }
 
@@ -714,21 +712,21 @@ background-repeat:repeat;padding-bottom:30px}
 .btn-gui{
 	margin-top: 10%;
 	margin-bottom: 0%;
-	margin-left: 38%;
+	/*margin-left: 38%;*/
 	width: 100px;
 	}    
 
 .btn-tuto{
 	margin-top: 10%;
 	margin-bottom: 0%;
-	margin-left: 38%;
+	/*margin-left: 38%;*/
 	width: 100px;
 	}    
 
 .btn-simu{
-	margin-top: 20%;
+	/*margin-top: 20%;*/
     margin-bottom: 0%;
-    margin-left: 38%;
+    /*margin-left: 38%;*/
     width: 100px;
 }
 
@@ -769,15 +767,15 @@ background-repeat:repeat;padding-bottom:30px}
 
 .btn-tuto-demo{
 	margin-top: 30%;
-	margin-bottom: 0%;
-	margin-left: 33%;
+	/*margin-bottom: 0%;
+	margin-left: 33%;*/
 	width: 100px;
 }    
 
 .btn-simu-demo{
 	margin-top: 20%; 
-	margin-bottom: 0%; 
-	margin-left: 33%; 
+	/*margin-bottom: 0%; 
+	margin-left: 33%; */
 	width: 100px;
 }
 
@@ -917,7 +915,7 @@ background-repeat:repeat;padding-bottom:30px}
 
 
 #countdown_dashboard{
-	position: absolute;*/
+	/*position: absolute;*/
 	left: 30%;
 	top: 100px;
 }
@@ -952,8 +950,8 @@ background-repeat:repeat;padding-bottom:30px}
 	}
 
 	h1 {
-    	font-size: 25px !important;
-    	text-align: center !important;
+    	font-size: 18px !important;
+    	text-align: justify !important;
 	}
 
 	.carousel-text{
@@ -979,8 +977,8 @@ background-repeat:repeat;padding-bottom:30px}
 @media only screen and (max-width: 415px) and (max-height: 736px){
 
 	h1 {
-    	font-size: 25px;
-    	text-align: center;
+    	font-size: 20px;
+    	text-align: justify;
 	}
 
 	#countdown_dashboard{    	
