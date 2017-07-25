@@ -347,7 +347,7 @@ function tutorial_sel(id_tuto){
         success:function(data){
             jQuery("#content").html(data);
             jQuery("#header").css({'display' : 'none', 'position' : 'relative'});
-            jQuery('#content').css({'padding-top' : '0px', 'background' : '#fff'});
+            jQuery('#content').css({'padding-top' : '0px', 'background' : '#fff', 'height' : '100%'});
         }
     });
 }
@@ -485,7 +485,7 @@ function escojer_demo(){
 
     var onclick = "jQuery('#header-full-home').css('background-position-x', '70%');";
     var link_tuto = "window.open('https://vimeo.com/92768616', '_blank', 'location=yes');";
-    var opc_demos = '<a href="#ini" id = "atras_dem_simu" onclick="'+ onclick +'" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;"><img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;"></a><h1 style="color:#39708A; padding-top: 0px; margin-bottom: 10%; text-align: center">Demostración</h1><a href="javascript:simulador_sel(15);"><img src="img/icon_int_3.png" alt="" class="animated bounceIn animation-delay-5 btn-simu-demo aligncenter"><p style="text-align: center;" >Simulador</p></a><a href="#" onclick="' + link_tuto+ '"><img src="img/icon_int_2.png" alt="" class="animated bounceIn animation-delay-5 btn-tuto-demo aligncenter"><p style="text-align: center;" >Tutorias</p>';
+    var opc_demos = '<a href="#ini" id = "atras_dem_simu" onclick="'+ onclick +'" data-toggle="tab" class="animated fadeIn animation-delay-8" style=" position: absolute;top: 60px;left: 30px;"><img src="img/icon_atras.png" alt="" class="animated bounceIn animation-delay-5" style="width: 10px;"></a><h1 style="color:#39708A; padding-top: 0px; margin-bottom: 10%; text-align: center !important;">Demostración</h1><a href="javascript:simulador_sel(15);"><img src="img/icon_int_3.png" alt="" class="animated bounceIn animation-delay-5 btn-simu-demo aligncenter"><p style="text-align: center;" >Simulador</p></a><a href="#" onclick="' + link_tuto+ '"><img src="img/icon_int_2.png" alt="" class="animated bounceIn animation-delay-5 btn-tuto-demo aligncenter"><p style="text-align: center;" >Tutorias</p>';
     
     jQuery.ajax({
         type:'POST',
